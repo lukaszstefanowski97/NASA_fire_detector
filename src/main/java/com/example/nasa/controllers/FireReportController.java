@@ -44,8 +44,8 @@ public class FireReportController {
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/registered/{userId}")
-    public ResponseEntity<FireReportDTO> addFireReport(@RequestBody FireReportDTO fireReportDTO, @PathVariable Long userId) {
+    @PostMapping("/registered")
+    public ResponseEntity<FireReportDTO> addFireReport(@RequestBody FireReportDTO fireReportDTO) {
         FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
                 fireReportDTO.getX(), fireReportDTO.getY(),
                 fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
@@ -56,7 +56,6 @@ public class FireReportController {
                 fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto(),
                 fireReportDTO.getAddress());
 
-        fireReport.setReporterId(userId);
         fireReportService.saveFireReport(fireReport);
 
         log.info(FireReportMessages.SAVED_FIRE_REPORT + fireReport.toString());

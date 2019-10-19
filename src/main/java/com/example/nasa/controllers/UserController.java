@@ -45,7 +45,7 @@ public class UserController {
     public ResponseEntity<UserDTO> addUser(@RequestBody User user) {
         userService.saveUser(user);
         UserDTO userDTO = new UserDTO(user.getId(), user.getName(), user.getSurname(), user.getCellPhoneNumber(),
-                user.getEmail(), user.getPhoto(), user.getNotificationRangeInMeters());
+                user.getEmail(), user.getPhoto(), user.getNotificationRangeInMeters(),user.getX(),user.getY());
 
         log.info(UserMessages.ADDED_USER + userDTO.toString());
 
