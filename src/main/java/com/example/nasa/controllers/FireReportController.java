@@ -20,6 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api/fireReports")
 @Slf4j
+@CrossOrigin("*")
 public class FireReportController {
 
     private final FireReportService fireReportService;
