@@ -42,4 +42,6 @@ public class FireReportDTO {
     private Boolean isHazardousMaterial;
 
     private byte[] photo;
+
+    private String address;
 }
