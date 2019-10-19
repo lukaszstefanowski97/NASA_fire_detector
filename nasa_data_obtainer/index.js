@@ -25,7 +25,7 @@ let requestLoop = setInterval(function(){
             console.log('error' + response.statusCode);
         }
     });
-}, 30000);
+}, 60000);
 
 app.get('/api/europe', (req, res) => {
     csv()
