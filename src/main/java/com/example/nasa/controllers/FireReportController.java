@@ -1,7 +1,10 @@
 package com.example.nasa.controllers;
 
 import com.example.nasa.dto.FireReportDTO;
+import com.example.nasa.dto.UnregisteredUserDTO;
+import com.example.nasa.dto.UserDTO;
 import com.example.nasa.entities.FireReport;
+import com.example.nasa.entities.UnregisteredUser;
 import com.example.nasa.services.FireReportService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -34,15 +37,40 @@ public class FireReportController {
     }
 
     @PostMapping("")
-    public ResponseEntity<FireReportDTO> addFireReport(@RequestBody FireReportDTO fireReportDTO) {
-        fireReportService.saveFireReport(new FireReport(fireReportDTO.getReporterId(),
+    public ResponseEntity<FireReportDTO> addFireReport(@RequestBody FireReportDTO fireReportDTO, UserDTO userDTO) {
+        FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
                 fireReportDTO.getX(), fireReportDTO.getY(),
                 fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
                 fireReportDTO.getFireTeam(), fireReportDTO.getIsFire(),
                 fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                 fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                 fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                fireReportDTO.getIsHazardousMaterial()));
+                fireReportDTO.getIsHazardousMaterial());
+
+        fireReport.setReporterId(userDTO.getId());
+        fireReportService.saveFireReport(fireReport);
+
+        return new ResponseEntity<>(fireReportDTO, HttpStatus.OK);
+    }
+
+    @PostMapping("")
+    public ResponseEntity<FireReportDTO> addFireReportUnregistered(@RequestBody FireReportDTO fireReportDTO,
+                                                                   UnregisteredUserDTO unregisteredUserDTO) {
+
+        FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
+                fireReportDTO.getX(), fireReportDTO.getY(),
+                fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
+                fireReportDTO.getFireTeam(), fireReportDTO.getIsFire(),
+                fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
+                fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
+                fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
+                fireReportDTO.getIsHazardousMaterial());
+
+        UnregisteredUser unregisteredUser = new UnregisteredUser(unregisteredUserDTO.getName(),
+                unregisteredUserDTO.getSurname(), unregisteredUserDTO.getCellPhoneNumber());
+
+        fireReport.setUnregisteredReporterId(unregisteredUser.getId());
+        fireReportService.saveFireReport(fireReport);
 
         return new ResponseEntity<>(fireReportDTO, HttpStatus.OK);
     }

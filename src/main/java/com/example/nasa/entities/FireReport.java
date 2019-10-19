@@ -19,6 +19,8 @@ public class FireReport {
 
     private Long reporterId;
 
+    private Long unregisteredReporterId;
+
     private Double x;
 
     private Double y;

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class User {
+public class UnregisteredUser {
 
     @Id
     @GeneratedValue
@@ -20,21 +20,11 @@ public class User {
 
     private String surname;
 
-    private String password;
-
     private String cellPhoneNumber;
 
-    private String email;
-
-    private String photo;
-
-    public User(String name, String surname, String password, String cellPhoneNumber, String email, String photo) {
-
+    public UnregisteredUser(String name, String surname, String cellPhoneNumber) {
         this.name = name;
         this.surname = surname;
-        this.password = password;
         this.cellPhoneNumber = cellPhoneNumber;
-        this.email = email;
-        this.photo = photo;
     }
 }
