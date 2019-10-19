@@ -16,4 +16,6 @@ public interface FireNotificationService {
     FireNotificationDTO editFireNotificationById(Long id, FireNotificationDTO fireNotificationCommand);
 
     FireNotification saveFireNotification(FireNotification fireNotification);
+
+    FireNotification changeFireNotificationStatus(Long id, Boolean status);
 }
