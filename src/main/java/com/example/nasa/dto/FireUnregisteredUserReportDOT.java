@@ -1,15 +1,11 @@
 package com.example.nasa.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class FireReportDTO {
+public class FireUnregisteredUserReportDOT {
 
     private Long id;
 
@@ -44,4 +40,10 @@ public class FireReportDTO {
     private byte[] photo;
 
     private String address;
+
+    private String userName;
+
+    private String userSurname;
+
+    private String userCellPhoneNumber;
 }
