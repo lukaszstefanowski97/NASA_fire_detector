@@ -73,7 +73,6 @@ public class FireNotificationServiceImpl implements FireNotificationService {
 
         if(fireNotification.isPresent()) {
             FireNotification fn = fireNotification.get();
-            fireNotificationRepository.save(fn);
             fn.setIsReal(status);
             return fireNotificationRepository.save(fn);
         }
