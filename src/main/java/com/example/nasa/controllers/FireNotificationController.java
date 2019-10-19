@@ -42,7 +42,7 @@ public class FireNotificationController {
                 fireNotificationCommand.getDescription(),
                 fireNotificationCommand.getFireDepartamentDescription(), fireNotificationCommand.getArePeople(),
                 fireNotificationCommand.getIsWood(), fireNotificationCommand.getIsBuilding(),
-                fireNotificationCommand.getIsHazardousMaterial()));
+                fireNotificationCommand.getIsElectricity(), fireNotificationCommand.getIsHazardousMaterial()));
 
         return new ResponseEntity<>(fireNotificationCommand, HttpStatus.OK);
     }

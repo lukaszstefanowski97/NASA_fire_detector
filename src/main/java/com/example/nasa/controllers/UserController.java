@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping("")
-    public ResponseEntity<UserDTO> addFUser(@RequestBody User user) {
+    public ResponseEntity<UserDTO> addUser(@RequestBody User user) {
         userService.saveUser(user);
         UserDTO userDTO = new UserDTO(user.getId(), user.getName(), user.getSurname(), user.getCellPhoneNumber(),
                 user.getEmail(), user.getPhoto());
@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDTO> editUSerById(@PathVariable Long id,
+    public ResponseEntity<UserDTO> editUserById(@PathVariable Long id,
                                                             @RequestBody User user) {
 
         UserDTO userDTO = userService.editUserById(id, user);
