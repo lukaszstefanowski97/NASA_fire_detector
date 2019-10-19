@@ -18,7 +18,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("")
-    public ResponseEntity<List<UserDTO>> getAllFireNotifications() {
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
         List<UserDTO> userDTOs = userService.getAllUsers();
 
         return userDTOs.isEmpty() ? new ResponseEntity<>(userDTOs, HttpStatus.NO_CONTENT) :
@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDTO> getFireNotificationById(@PathVariable Long id) {
+    public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
         UserDTO userDTO = userService.getUserById(id);
 
         return userDTO != null ? new ResponseEntity<>(userDTO, HttpStatus.OK) :
@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping("")
-    public ResponseEntity<UserDTO> addFireNotification(@RequestBody User user) {
+    public ResponseEntity<UserDTO> addFUser(@RequestBody User user) {
         userService.saveUser(user);
         UserDTO userDTO = new UserDTO(user.getId(), user.getName(), user.getSurname(), user.getCellPhoneNumber(),
                 user.getEmail(), user.getPhoto());
@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDTO> editFireNotificationById(@PathVariable Long id,
+    public ResponseEntity<UserDTO> editUSerById(@PathVariable Long id,
                                                             @RequestBody User user) {
 
         UserDTO userDTO = userService.editUserById(id, user);
@@ -53,7 +53,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<UserDTO> deleteFireNotificationById(@PathVariable Long id) {
+    public ResponseEntity<UserDTO> deleteUserById(@PathVariable Long id) {
         UserDTO removedUserDTO = userService.deleteUserById(id);
 
         return removedUserDTO != null ? new ResponseEntity<>(removedUserDTO, HttpStatus.OK) :
