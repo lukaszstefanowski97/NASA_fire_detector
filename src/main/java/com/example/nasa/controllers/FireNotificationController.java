@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/fireNotifications")
 public class FireNotificationController {
 
-    FireNotificationService fireNotificationService;
+    private final FireNotificationService fireNotificationService;
 
     @GetMapping("")
     public ResponseEntity<List<FireNotification>> getAllFireNotifications() {
