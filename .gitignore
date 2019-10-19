@@ -31,3 +31,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### npm ###
+nasa_data_obtainer/node_modules
