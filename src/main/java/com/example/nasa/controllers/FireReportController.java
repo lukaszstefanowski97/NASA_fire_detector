@@ -44,7 +44,7 @@ public class FireReportController {
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("")
+    @PostMapping("/registered")
     public ResponseEntity<FireReportDTO> addFireReport(@RequestBody FireReportDTO fireReportDTO, UserDTO userDTO) {
         FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
                 fireReportDTO.getX(), fireReportDTO.getY(),
@@ -63,7 +63,7 @@ public class FireReportController {
         return new ResponseEntity<>(fireReportDTO, HttpStatus.OK);
     }
 
-    @PostMapping("")
+    @PostMapping("/unregistered")
     public ResponseEntity<FireReportDTO> addFireReportUnregistered(@RequestBody FireReportDTO fireReportDTO,
                                                                    UnregisteredUserDTO unregisteredUserDTO) {
 
