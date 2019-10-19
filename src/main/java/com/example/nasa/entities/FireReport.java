@@ -49,10 +49,12 @@ public class FireReport {
 
     private Boolean isReal;
 
+    private byte[] photo;
+
     public FireReport(Long reporterId, Double x, Double y, Date startDate, Integer fireReportApproveCounter,
                       Boolean fireTeam, Boolean isFire, String description, String fireDepartamentDescription,
                       Boolean arePeople, Boolean isWood, Boolean isBuilding, Boolean isElectricity,
-                      Boolean isHazardousMaterial) {
+                      Boolean isHazardousMaterial, byte[] photo) {
         this.reporterId = reporterId;
         this.x = x;
         this.y = y;
@@ -67,5 +69,6 @@ public class FireReport {
         this.isBuilding = isBuilding;
         this.isElectricity = isElectricity;
         this.isHazardousMaterial = isHazardousMaterial;
+        this.photo = photo;
     }
 }

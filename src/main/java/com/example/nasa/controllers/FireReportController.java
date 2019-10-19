@@ -50,7 +50,7 @@ public class FireReportController {
                 fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                 fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                 fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                fireReportDTO.getIsHazardousMaterial());
+                fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto()));
 
         fireReport.setReporterId(userDTO.getId());
         fireReportService.saveFireReport(fireReport);

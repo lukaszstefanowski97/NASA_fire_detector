@@ -40,4 +40,6 @@ public class FireReportDTO {
     private Boolean isElectricity;
 
     private Boolean isHazardousMaterial;
+
+    private byte[] photo;
 }

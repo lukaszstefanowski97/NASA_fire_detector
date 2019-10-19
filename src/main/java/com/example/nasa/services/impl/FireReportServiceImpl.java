@@ -53,7 +53,7 @@ public class FireReportServiceImpl implements FireReportService {
                     fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                     fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                     fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                    fireReportDTO.getIsHazardousMaterial()));
+                    fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto()));
 
             return fireReportDTO;
         }
@@ -63,8 +63,7 @@ public class FireReportServiceImpl implements FireReportService {
 
     @Override
     public FireReport saveFireReport(FireReport fireReport) {
-        fireReportRepository.save(fireReport);
-        return fireReport;
+        return fireReportRepository.save(fireReport);
     }
 
     @Override
