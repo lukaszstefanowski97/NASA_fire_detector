@@ -1,5 +1,6 @@
 package com.example.nasa.entities;
 
+import com.example.nasa.dto.UserDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,36 +18,40 @@ public class FireNotification {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
-    Float x;
+    private Float x;
 
-    Float y;
+    private Float y;
 
-    Date startDate;
+    private Date startDate;
 
-    Integer fireNotificationApproveCounter;
+    private Integer fireNotificationApproveCounter;
 
-    Boolean fireTeam;
+    private Boolean fireTeam;
 
-    Boolean isFire;
+    private Boolean isFire;
 
-    String description;
+    private List<Long> participatedUsersId = new LinkedList<>();
 
-    String fireDepartamentDescription;
+    private String description;
 
-    Boolean arePeople;
+    private String fireDepartamentDescription;
 
-    Boolean isWood;
+    private Boolean arePeople;
 
-    Boolean isBuilding;
+    private Boolean isWood;
 
-    Boolean isHazardousMaterial;
+    private Boolean isBuilding;
 
-    Boolean isReal;
+    private Boolean isHazardousMaterial;
+
+    private Boolean isReal;
 
     public FireNotification(Float x, Float y, Date startDate, Integer fireNotificationApproveCounter, Boolean fireTeam,
-                            Boolean isFire, String description, String fireDepartamentDescription, Boolean arePeople,
+                            Boolean isFire, List<Long> participatedUsersId, String description,
+                            String fireDepartamentDescription,
+                            Boolean arePeople,
                             Boolean isWood, Boolean isBuilding, Boolean isHazardousMaterial) {
         this.x = x;
         this.y = y;
@@ -52,6 +59,7 @@ public class FireNotification {
         this.fireNotificationApproveCounter = fireNotificationApproveCounter;
         this.fireTeam = fireTeam;
         this.isFire = isFire;
+        this.participatedUsersId = participatedUsersId;
         this.description = description;
         this.fireDepartamentDescription = fireDepartamentDescription;
         this.arePeople = arePeople;

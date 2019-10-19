@@ -1,11 +1,14 @@
 package com.example.nasa.entities;
 
+import com.example.nasa.dto.FireNotificationDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Data
@@ -23,6 +26,8 @@ public class User {
     private String password;
 
     private Integer cellPhoneNumber;
+
+    private List<FireNotificationDTO> fireNotificationDTOList = new LinkedList<>();
 
     private String email;
 

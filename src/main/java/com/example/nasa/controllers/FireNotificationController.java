@@ -38,7 +38,8 @@ public class FireNotificationController {
         fireNotificationService.saveFireNotification(new FireNotification(fireNotificationCommand.getX(),
                 fireNotificationCommand.getY(), fireNotificationCommand.getStartDate(),
                 fireNotificationCommand.getFireNotificationApproveCounter(), fireNotificationCommand.getFireTeam(),
-                fireNotificationCommand.getIsFire(), fireNotificationCommand.getDescription(),
+                fireNotificationCommand.getIsFire(), fireNotificationCommand.getParticipatedUsersId(),
+                fireNotificationCommand.getDescription(),
                 fireNotificationCommand.getFireDepartamentDescription(), fireNotificationCommand.getArePeople(),
                 fireNotificationCommand.getIsWood(), fireNotificationCommand.getIsBuilding(),
                 fireNotificationCommand.getIsHazardousMaterial()));
