@@ -66,4 +66,18 @@ public class FireNotificationServiceImpl implements FireNotificationService {
         fireNotificationRepository.save(fireNotification);
         return fireNotification;
     }
+
+    @Override
+    public FireNotification changeFireNotificationStatus(Long id, Boolean status) {
+        Optional<FireNotification> fireNotification = fireNotificationRepository.findById(id);
+
+        if(fireNotification.isPresent()) {
+            FireNotification fn = fireNotification.get();
+            fireNotificationRepository.save(fn);
+            fn.setIsReal(status);
+            return fireNotificationRepository.save(fn);
+        }
+
+        return null;
+    }
 }

@@ -65,4 +65,12 @@ public class FireNotificationController {
         return removedFireNotification != null ? new ResponseEntity<>(removedFireNotification, HttpStatus.OK) :
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<FireNotification> changeFireNotificationStatus(@PathVariable Long id, @RequestBody Boolean status){
+        FireNotification editedFireNotification = fireNotificationService.changeFireNotificationStatus(id, status);
+
+        return editedFireNotification != null ? new ResponseEntity<>(editedFireNotification, HttpStatus.OK) :
+                ResponseEntity.notFound().build();
+    }
 }
