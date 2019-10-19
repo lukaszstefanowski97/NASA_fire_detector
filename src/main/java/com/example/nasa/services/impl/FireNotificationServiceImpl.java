@@ -53,7 +53,7 @@ public class FireNotificationServiceImpl implements FireNotificationService {
                     fireNotificationCommand.getParticipatedUsersId(), fireNotificationCommand.getDescription(),
                     fireNotificationCommand.getFireDepartamentDescription(), fireNotificationCommand.getArePeople(),
                     fireNotificationCommand.getIsWood(), fireNotificationCommand.getIsBuilding(),
-                    fireNotificationCommand.getIsHazardousMaterial()));
+                    fireNotificationCommand.getIsElectricity(), fireNotificationCommand.getIsHazardousMaterial()));
 
             return fireNotificationCommand;
         }

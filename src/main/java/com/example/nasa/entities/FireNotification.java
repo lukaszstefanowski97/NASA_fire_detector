@@ -44,6 +44,8 @@ public class FireNotification {
 
     private Boolean isBuilding;
 
+    private Boolean isElectricity;
+
     private Boolean isHazardousMaterial;
 
     private Boolean isReal;
@@ -51,8 +53,8 @@ public class FireNotification {
     public FireNotification(Float x, Float y, Date startDate, Integer fireNotificationApproveCounter, Boolean fireTeam,
                             Boolean isFire, List<Long> participatedUsersId, String description,
                             String fireDepartamentDescription,
-                            Boolean arePeople,
-                            Boolean isWood, Boolean isBuilding, Boolean isHazardousMaterial) {
+                            Boolean arePeople, Boolean isWood, Boolean isBuilding, Boolean isElectricity,
+                            Boolean isHazardousMaterial) {
         this.x = x;
         this.y = y;
         this.startDate = startDate;
@@ -65,6 +67,7 @@ public class FireNotification {
         this.arePeople = arePeople;
         this.isWood = isWood;
         this.isBuilding = isBuilding;
+        this.isElectricity = isElectricity;
         this.isHazardousMaterial = isHazardousMaterial;
     }
 }

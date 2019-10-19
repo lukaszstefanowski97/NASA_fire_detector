@@ -39,5 +39,7 @@ public class FireNotificationDTO {
 
     private Boolean isBuilding;
 
+    private Boolean isElectricity;
+
     private Boolean isHazardousMaterial;
 }
