@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
         List<UserDTO> userDTOs = new ArrayList<>();
         for (User user : users) {
             userDTOs.add(new UserDTO(user.getId(), user.getName(), user.getSurname(), user.getCellPhoneNumber(),
-                    user.getEmail(), user.getPhoto(), user.getNotificationRange()));
+                    user.getEmail(), user.getPhoto(), user.getNotificationRangeInMeters()));
         }
 
         return userDTOs;
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
         return user.map(value -> new UserDTO(value.getId(), value.getName(), value.getSurname(),
                 value.getCellPhoneNumber(), value.getEmail(),
-                value.getPhoto(), value.getNotificationRange())).orElse(null);
+                value.getPhoto(), value.getNotificationRangeInMeters())).orElse(null);
 
     }
 
@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
             userRepository.deleteById(id);
             return new UserDTO(user.get().getId(), user.get().getName(), user.get().getSurname(),
                     user.get().getCellPhoneNumber(), user.get().getEmail(),
-                    user.get().getPhoto(), user.get().getNotificationRange());
+                    user.get().getPhoto(), user.get().getNotificationRangeInMeters());
         }
 
         return null;
@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
             userRepository.deleteById(id);
             return new UserDTO(userRepository.save(userCommand).getId(), userCommand.getName(), userCommand.getSurname(),
                     userCommand.getCellPhoneNumber(), userCommand.getEmail(),
-                    userCommand.getPhoto(), userCommand.getNotificationRange());
+                    userCommand.getPhoto(), userCommand.getNotificationRangeInMeters());
         }
         return null;
     }
@@ -71,6 +71,6 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return new UserDTO(user.getId(), user.getName(), user.getSurname(),
                 user.getCellPhoneNumber(), user.getEmail(), user.getPhoto(),
-                user.getNotificationRange());
+                user.getNotificationRangeInMeters());
     }
 }
