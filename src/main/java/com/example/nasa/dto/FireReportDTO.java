@@ -25,7 +25,7 @@ public class FireReportDTO {
 
     private Boolean fireTeam;
 
-    private Boolean isFire;
+    private Boolean isActiveFire;
 
     private String description;
 

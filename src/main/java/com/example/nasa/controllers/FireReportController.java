@@ -46,7 +46,7 @@ public class FireReportController {
         FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
                 fireReportDTO.getX(), fireReportDTO.getY(),
                 fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
-                fireReportDTO.getFireTeam(), fireReportDTO.getIsFire(),
+                fireReportDTO.getFireTeam(), fireReportDTO.getIsActiveFire(),
                 fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                 fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                 fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
