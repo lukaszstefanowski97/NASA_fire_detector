@@ -6,6 +6,7 @@ import com.example.nasa.dto.UserDTO;
 import com.example.nasa.entities.FireReport;
 import com.example.nasa.entities.UnregisteredUser;
 import com.example.nasa.messages.FireReportMessages;
+import com.example.nasa.repositories.UnregisteredUserRepository;
 import com.example.nasa.services.FireReportService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,8 @@ import java.util.List;
 public class FireReportController {
 
     private final FireReportService fireReportService;
+
+    private final UnregisteredUserRepository unregisteredUserRepository;
 
     @GetMapping("")
     public ResponseEntity<List<FireReport>> getAllFireReports() {
@@ -75,6 +78,8 @@ public class FireReportController {
 
         UnregisteredUser unregisteredUser = new UnregisteredUser(unregisteredUserDTO.getName(),
                 unregisteredUserDTO.getSurname(), unregisteredUserDTO.getCellPhoneNumber());
+
+        unregisteredUserRepository.save(unregisteredUser);
 
         fireReport.setUnregisteredReporterId(unregisteredUser.getId());
         fireReportService.saveFireReport(fireReport);
