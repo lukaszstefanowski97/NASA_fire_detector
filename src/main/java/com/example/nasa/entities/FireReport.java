@@ -31,7 +31,7 @@ public class FireReport {
 
     private Boolean fireTeam;
 
-    private Boolean isFire;
+    private Boolean isActiveFire;
 
     private String description;
 
@@ -49,17 +49,19 @@ public class FireReport {
 
     private Boolean isReal;
 
+    private byte[] photo;
+
     public FireReport(Long reporterId, Double x, Double y, Date startDate, Integer fireReportApproveCounter,
-                      Boolean fireTeam, Boolean isFire, String description, String fireDepartamentDescription,
+                      Boolean fireTeam, Boolean isActiveFire, String description, String fireDepartamentDescription,
                       Boolean arePeople, Boolean isWood, Boolean isBuilding, Boolean isElectricity,
-                      Boolean isHazardousMaterial) {
+                      Boolean isHazardousMaterial, byte[] photo) {
         this.reporterId = reporterId;
         this.x = x;
         this.y = y;
         this.startDate = startDate;
         this.fireReportApproveCounter = fireReportApproveCounter;
         this.fireTeam = fireTeam;
-        this.isFire = isFire;
+        this.isActiveFire = isActiveFire;
         this.description = description;
         this.fireDepartamentDescription = fireDepartamentDescription;
         this.arePeople = arePeople;
@@ -67,5 +69,6 @@ public class FireReport {
         this.isBuilding = isBuilding;
         this.isElectricity = isElectricity;
         this.isHazardousMaterial = isHazardousMaterial;
+        this.photo = photo;
     }
 }
