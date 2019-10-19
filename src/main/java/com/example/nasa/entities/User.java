@@ -29,8 +29,11 @@ public class User {
     private String photo;
 
     private Long notificationRangeInMeters;
+    private Double x;
 
-    public User(String name, String surname, String password, String cellPhoneNumber, String email, String photo, Long notificationRangeInMeters) {
+    private Double y;
+
+    public User(String name, String surname, String password, String cellPhoneNumber, String email, String photo, Double x, Double y) {
 
         this.name = name;
         this.surname = surname;
@@ -38,6 +41,7 @@ public class User {
         this.cellPhoneNumber = cellPhoneNumber;
         this.email = email;
         this.photo = photo;
-        this.notificationRangeInMeters = notificationRangeInMeters;
+        this.x = x;
+        this.y = y;
     }
 }

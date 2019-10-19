@@ -64,6 +64,7 @@ public class FireReportServiceImpl implements FireReportService {
 
     @Override
     public FireReport saveFireReport(FireReport fireReport) {
+
         return fireReportRepository.save(fireReport);
     }
 

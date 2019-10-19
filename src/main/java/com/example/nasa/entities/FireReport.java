@@ -2,6 +2,7 @@ package com.example.nasa.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,7 @@ public class FireReport {
 
     private Double y;
 
+    @CreationTimestamp
     private Date startDate;
 
     private Integer fireReportApproveCounter;
