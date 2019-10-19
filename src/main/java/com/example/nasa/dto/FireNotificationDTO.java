@@ -5,33 +5,39 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class FireNotificationDTO {
 
-    Float x;
+    private Long id;
 
-    Float y;
+    private Float x;
 
-    Date startDate;
+    private Float y;
 
-    Integer fireNotificationApproveCounter;
+    private Date startDate;
 
-    Boolean fireTeam;
+    private Integer fireNotificationApproveCounter;
 
-    Boolean isFire;
+    private Boolean fireTeam;
 
-    String description;
+    private Boolean isFire;
 
-    String fireDepartamentDescription;
+    private List<Long> participatedUsersId = new LinkedList<>();
 
-    Boolean arePeople;
+    private String description;
 
-    Boolean isWood;
+    private String fireDepartamentDescription;
 
-    Boolean isBuilding;
+    private Boolean arePeople;
 
-    Boolean isHazardousMaterial;
+    private Boolean isWood;
+
+    private Boolean isBuilding;
+
+    private Boolean isHazardousMaterial;
 }
