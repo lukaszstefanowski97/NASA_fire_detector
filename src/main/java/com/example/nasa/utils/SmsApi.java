@@ -1,6 +1,7 @@
 package com.example.nasa.utils;
 
 import com.example.nasa.config.properties.SmsApiConfig;
+import com.example.nasa.dto.UserDTO;
 import com.example.nasa.entities.User;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,7 @@ public class SmsApi {
 
     private SmsApiConfig smsApiConfig;
 
-    public String urlForFireLocationSms(List<User> userListInRange, Double fireLat, Double fireLong) {
+    public String urlForFireLocationSms(List<UserDTO> userListInRange, Double fireLat, Double fireLong) {
 
         StringBuilder responseBuilder = new StringBuilder();
 
@@ -34,14 +35,4 @@ public class SmsApi {
         return responseBuilder.toString();
     }
 
-//    private RestTemplate template() {
-//        RestTemplate restTemplate = new RestTemplate();
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.
-//
-//                HttpEntity<String> entity = new HttpEntity<>("body", headers);
-//
-//        restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-//
-//    }
 }

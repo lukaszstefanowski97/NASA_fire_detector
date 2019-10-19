@@ -22,4 +22,8 @@ public class UserDTO {
     private String photo;
 
     private Long notificationRangeInMeters;
+
+    private Double x;
+
+    private Double y;
 }
