@@ -41,6 +41,8 @@ public class FireNotification {
 
     Boolean isHazardousMaterial;
 
+    Boolean isReal;
+
     public FireNotification(Float x, Float y, Date startDate, Integer fireNotificationApproveCounter, Boolean fireTeam,
                             Boolean isFire, String description, String fireDepartamentDescription, Boolean arePeople,
                             Boolean isWood, Boolean isBuilding, Boolean isHazardousMaterial) {

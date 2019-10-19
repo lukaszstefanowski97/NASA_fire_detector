@@ -1,5 +1,6 @@
 package com.example.nasa.services.impl;
 
+import com.example.nasa.dto.FireNotificationDTO;
 import com.example.nasa.entities.FireNotification;
 import com.example.nasa.repositories.FireNotificationRepository;
 import com.example.nasa.services.FireNotificationService;
@@ -40,12 +41,18 @@ public class FireNotificationServiceImpl implements FireNotificationService {
     }
 
     @Override
-    public FireNotification editFireNotificationById(Long id, FireNotification fireNotificationCommand) {
+    public FireNotificationDTO editFireNotificationById(Long id, FireNotificationDTO fireNotificationCommand) {
         Optional<FireNotification> fireNotification = fireNotificationRepository.findById(id);
 
         if (fireNotification.isPresent()) {
             fireNotificationRepository.deleteById(id);
-            fireNotificationRepository.save(fireNotificationCommand);
+            fireNotificationRepository.save(new FireNotification(fireNotificationCommand.getX(),
+                    fireNotificationCommand.getY(), fireNotificationCommand.getStartDate(),
+                    fireNotificationCommand.getFireNotificationApproveCounter(),
+                    fireNotificationCommand.getFireTeam(), fireNotificationCommand.getIsFire(),
+                    fireNotificationCommand.getDescription(), fireNotificationCommand.getFireDepartamentDescription()
+                    , fireNotificationCommand.getArePeople(), fireNotificationCommand.getIsWood(),
+                    fireNotificationCommand.getIsBuilding(), fireNotificationCommand.getIsHazardousMaterial()));
             return fireNotificationCommand;
         }
 
