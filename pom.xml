@@ -68,6 +68,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <finalName>ICFire</finalName>
     </build>
 
 </project>
