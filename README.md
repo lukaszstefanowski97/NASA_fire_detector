@@ -1,5 +1,6 @@
 ![](src/main/resources/images/05AFC0C4-A5E6-473D-A643-A15972AB7218_1_105_c.jpeg)
 
+![Jenkins](https://img.shields.io/jenkins/build/https/jenkins.bjorn.ml/job/NASA_backend)
 ![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)
 
 ## Contributors
