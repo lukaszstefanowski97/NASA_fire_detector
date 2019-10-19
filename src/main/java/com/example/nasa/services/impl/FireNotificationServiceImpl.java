@@ -46,14 +46,14 @@ public class FireNotificationServiceImpl implements FireNotificationService {
 
         if (fireNotification.isPresent()) {
             fireNotificationRepository.deleteById(id);
-            fireNotificationRepository.save(new FireNotification(fireNotificationCommand.getX(),
-                    fireNotificationCommand.getY(), fireNotificationCommand.getStartDate(),
-                    fireNotificationCommand.getFireNotificationApproveCounter(),
+            fireNotificationRepository.save(new FireNotification(fireNotificationCommand.getReporterId(),
+                    fireNotificationCommand.getX(), fireNotificationCommand.getY(),
+                    fireNotificationCommand.getStartDate(), fireNotificationCommand.getFireNotificationApproveCounter(),
                     fireNotificationCommand.getFireTeam(), fireNotificationCommand.getIsFire(),
-                    fireNotificationCommand.getParticipatedUsersId(), fireNotificationCommand.getDescription(),
-                    fireNotificationCommand.getFireDepartamentDescription(), fireNotificationCommand.getArePeople(),
-                    fireNotificationCommand.getIsWood(), fireNotificationCommand.getIsBuilding(),
-                    fireNotificationCommand.getIsElectricity(), fireNotificationCommand.getIsHazardousMaterial()));
+                    fireNotificationCommand.getDescription(), fireNotificationCommand.getFireDepartamentDescription(),
+                    fireNotificationCommand.getArePeople(), fireNotificationCommand.getIsWood(),
+                    fireNotificationCommand.getIsBuilding(), fireNotificationCommand.getIsElectricity(),
+                    fireNotificationCommand.getIsHazardousMaterial()));
 
             return fireNotificationCommand;
         }

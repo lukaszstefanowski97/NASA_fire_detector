@@ -35,21 +35,21 @@ public class FireNotificationController {
 
     @PostMapping("")
     public ResponseEntity<FireNotificationDTO> addFireNotification(@RequestBody FireNotificationDTO fireNotificationCommand) {
-        fireNotificationService.saveFireNotification(new FireNotification(fireNotificationCommand.getX(),
-                fireNotificationCommand.getY(), fireNotificationCommand.getStartDate(),
-                fireNotificationCommand.getFireNotificationApproveCounter(), fireNotificationCommand.getFireTeam(),
-                fireNotificationCommand.getIsFire(), fireNotificationCommand.getParticipatedUsersId(),
-                fireNotificationCommand.getDescription(),
-                fireNotificationCommand.getFireDepartamentDescription(), fireNotificationCommand.getArePeople(),
-                fireNotificationCommand.getIsWood(), fireNotificationCommand.getIsBuilding(),
-                fireNotificationCommand.getIsElectricity(), fireNotificationCommand.getIsHazardousMaterial()));
+        fireNotificationService.saveFireNotification(new FireNotification(fireNotificationCommand.getReporterId(),
+                fireNotificationCommand.getX(), fireNotificationCommand.getY(),
+                fireNotificationCommand.getStartDate(), fireNotificationCommand.getFireNotificationApproveCounter(),
+                fireNotificationCommand.getFireTeam(), fireNotificationCommand.getIsFire(),
+                fireNotificationCommand.getDescription(), fireNotificationCommand.getFireDepartamentDescription(),
+                fireNotificationCommand.getArePeople(), fireNotificationCommand.getIsWood(),
+                fireNotificationCommand.getIsBuilding(), fireNotificationCommand.getIsElectricity(),
+                fireNotificationCommand.getIsHazardousMaterial()));
 
         return new ResponseEntity<>(fireNotificationCommand, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<FireNotificationDTO> editFireNotificationById(@PathVariable Long id,
-                                                                     @RequestBody FireNotificationDTO fireNotificationCommand) {
+                                                                        @RequestBody FireNotificationDTO fireNotificationCommand) {
 
         FireNotificationDTO fireNotificationEdit = fireNotificationService.editFireNotificationById(id,
                 fireNotificationCommand);
