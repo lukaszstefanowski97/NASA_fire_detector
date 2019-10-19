@@ -5,29 +5,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FireNotificationDTO {
+public class FireReportDTO {
 
     private Long id;
 
-    private Float x;
+    private Long reporterId;
 
-    private Float y;
+    private Double x;
+
+    private Double y;
 
     private Date startDate;
 
-    private Integer fireNotificationApproveCounter;
+    private Integer fireReportApproveCounter;
 
     private Boolean fireTeam;
 
     private Boolean isFire;
-
-    private List<Long> participatedUsersId = new LinkedList<>();
 
     private String description;
 
