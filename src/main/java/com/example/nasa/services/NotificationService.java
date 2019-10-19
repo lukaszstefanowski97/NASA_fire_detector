@@ -4,5 +4,5 @@ import com.example.nasa.entities.FireReport;
 
 public interface NotificationService {
 
-    public void sendNotification(FireReport fireReport);
+    void sendNotification(FireReport fireReport);
 }

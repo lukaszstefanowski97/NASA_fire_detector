@@ -4,6 +4,7 @@ import com.example.nasa.dto.FireReportDTO;
 import com.example.nasa.entities.FireReport;
 import com.example.nasa.repositories.FireReportRepository;
 import com.example.nasa.services.FireReportService;
+import com.example.nasa.services.NotificationService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class FireReportServiceImpl implements FireReportService {
 
     private final FireReportRepository fireReportRepository;
+    private final NotificationService notificationService;
 
     @Override
     public List<FireReport> getAllFireReports() {
@@ -64,7 +66,7 @@ public class FireReportServiceImpl implements FireReportService {
 
     @Override
     public FireReport saveFireReport(FireReport fireReport) {
-
+        notificationService.sendNotification(fireReport);
         return fireReportRepository.save(fireReport);
     }
 
