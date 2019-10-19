@@ -22,7 +22,7 @@ setInterval(function () {
                 console.log("The file was saved!");
             });
         } else {
-            console.log('error' + response.statusCode);
+            console.log('Error: did not fetch NASA fire API data');
         }
     });
 }, 60000);
