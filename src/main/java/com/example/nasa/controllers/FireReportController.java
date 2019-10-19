@@ -1,8 +1,7 @@
 package com.example.nasa.controllers;
 
 import com.example.nasa.dto.FireReportDTO;
-import com.example.nasa.dto.UnregisteredUserDTO;
-import com.example.nasa.dto.UserDTO;
+import com.example.nasa.dto.FireUnregisteredUserReportDOT;
 import com.example.nasa.entities.FireReport;
 import com.example.nasa.entities.UnregisteredUser;
 import com.example.nasa.messages.FireReportMessages;
@@ -44,8 +43,8 @@ public class FireReportController {
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/registered")
-    public ResponseEntity<FireReportDTO> addFireReport(@RequestBody FireReportDTO fireReportDTO, UserDTO userDTO) {
+    @PostMapping("/registered/{userId}")
+    public ResponseEntity<FireReportDTO> addFireReport(@RequestBody FireReportDTO fireReportDTO, @PathVariable Long userId) {
         FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
                 fireReportDTO.getX(), fireReportDTO.getY(),
                 fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
@@ -56,7 +55,7 @@ public class FireReportController {
                 fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto(),
                 fireReportDTO.getAddress());
 
-        fireReport.setReporterId(userDTO.getId());
+        fireReport.setReporterId(userId);
         fireReportService.saveFireReport(fireReport);
 
         log.info(FireReportMessages.SAVED_FIRE_REPORT + fireReport.toString());
@@ -65,21 +64,20 @@ public class FireReportController {
     }
 
     @PostMapping("/unregistered")
-    public ResponseEntity<FireReportDTO> addFireReportUnregistered(@RequestBody FireReportDTO fireReportDTO,
-                                                                   UnregisteredUserDTO unregisteredUserDTO) {
+    public ResponseEntity<FireUnregisteredUserReportDOT> addFireReportUnregistered(@RequestBody FireUnregisteredUserReportDOT fireUnregisteredUserReportDOT) {
 
-        FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
-                fireReportDTO.getX(), fireReportDTO.getY(),
-                fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
-                fireReportDTO.getFireTeam(), fireReportDTO.getIsActiveFire(),
-                fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
-                fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
-                fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto(),
-                fireReportDTO.getAddress());
+        FireReport fireReport = new FireReport(fireUnregisteredUserReportDOT.getReporterId(),
+                fireUnregisteredUserReportDOT.getX(), fireUnregisteredUserReportDOT.getY(),
+                fireUnregisteredUserReportDOT.getStartDate(), fireUnregisteredUserReportDOT.getFireReportApproveCounter(),
+                fireUnregisteredUserReportDOT.getFireTeam(), fireUnregisteredUserReportDOT.getIsActiveFire(),
+                fireUnregisteredUserReportDOT.getDescription(), fireUnregisteredUserReportDOT.getFireDepartamentDescription(),
+                fireUnregisteredUserReportDOT.getArePeople(), fireUnregisteredUserReportDOT.getIsWood(),
+                fireUnregisteredUserReportDOT.getIsBuilding(), fireUnregisteredUserReportDOT.getIsElectricity(),
+                fireUnregisteredUserReportDOT.getIsHazardousMaterial(), fireUnregisteredUserReportDOT.getPhoto(),
+                fireUnregisteredUserReportDOT.getAddress());
 
-        UnregisteredUser unregisteredUser = new UnregisteredUser(unregisteredUserDTO.getName(),
-                unregisteredUserDTO.getSurname(), unregisteredUserDTO.getCellPhoneNumber());
+        UnregisteredUser unregisteredUser = new UnregisteredUser(fireUnregisteredUserReportDOT.getUserName(),
+                fireUnregisteredUserReportDOT.getUserSurname(), fireUnregisteredUserReportDOT.getUserCellPhoneNumber());
 
         unregisteredUserRepository.save(unregisteredUser);
 
@@ -88,7 +86,7 @@ public class FireReportController {
 
         log.info(FireReportMessages.SAVED_FIRE_REPORT_UNREGISTERED_USER + fireReport.toString());
 
-        return new ResponseEntity<>(fireReportDTO, HttpStatus.OK);
+        return new ResponseEntity<>(fireUnregisteredUserReportDOT, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
