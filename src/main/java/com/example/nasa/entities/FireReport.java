@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-public class FireNotification {
+public class FireReport {
 
     @Id
     @GeneratedValue
@@ -25,7 +25,7 @@ public class FireNotification {
 
     private Date startDate;
 
-    private Integer fireNotificationApproveCounter;
+    private Integer fireReportApproveCounter;
 
     private Boolean fireTeam;
 
@@ -47,15 +47,15 @@ public class FireNotification {
 
     private Boolean isReal;
 
-    public FireNotification(Long reporterId, Double x, Double y, Date startDate, Integer fireNotificationApproveCounter,
-                            Boolean fireTeam, Boolean isFire, String description, String fireDepartamentDescription,
-                            Boolean arePeople, Boolean isWood, Boolean isBuilding, Boolean isElectricity,
-                            Boolean isHazardousMaterial) {
+    public FireReport(Long reporterId, Double x, Double y, Date startDate, Integer fireReportApproveCounter,
+                      Boolean fireTeam, Boolean isFire, String description, String fireDepartamentDescription,
+                      Boolean arePeople, Boolean isWood, Boolean isBuilding, Boolean isElectricity,
+                      Boolean isHazardousMaterial) {
         this.reporterId = reporterId;
         this.x = x;
         this.y = y;
         this.startDate = startDate;
-        this.fireNotificationApproveCounter = fireNotificationApproveCounter;
+        this.fireReportApproveCounter = fireReportApproveCounter;
         this.fireTeam = fireTeam;
         this.isFire = isFire;
         this.description = description;

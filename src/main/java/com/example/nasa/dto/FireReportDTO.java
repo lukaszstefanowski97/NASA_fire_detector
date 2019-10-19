@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FireNotificationDTO {
+public class FireReportDTO {
 
     private Long id;
 
@@ -21,7 +21,7 @@ public class FireNotificationDTO {
 
     private Date startDate;
 
-    private Integer fireNotificationApproveCounter;
+    private Integer fireReportApproveCounter;
 
     private Boolean fireTeam;
 
