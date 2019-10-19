@@ -53,7 +53,8 @@ public class FireReportServiceImpl implements FireReportService {
                     fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                     fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                     fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                    fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto()));
+                    fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto(),
+                    fireReportDTO.getAddress()));
 
             return fireReportDTO;
         }

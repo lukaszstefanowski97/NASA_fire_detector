@@ -20,4 +20,6 @@ public class UserDTO {
     private String email;
 
     private String photo;
+
+    private Long notificationRangeInMeters;
 }
