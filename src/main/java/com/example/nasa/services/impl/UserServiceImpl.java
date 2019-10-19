@@ -15,7 +15,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     public List<UserDTO> getAllUsers() {
