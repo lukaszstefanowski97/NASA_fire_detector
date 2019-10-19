@@ -15,7 +15,7 @@ public class FireNotification {
 
     @Id
     @GeneratedValue
-    Long ID;
+    Long id;
 
     Float x;
 
