@@ -13,3 +13,5 @@
     <td align="center"><a href="https://github.com/MichauMat"><img src="https://avatars.githubusercontent.com/MichauMat" width="100px;"/><b>Michał Matera</b></td>
   </tr>
 </table>
+
+<h4>This repository contains backend part of ICFire project.</h4>
