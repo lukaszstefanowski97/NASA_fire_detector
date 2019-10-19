@@ -53,7 +53,7 @@ public class FireReportController {
                 fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                 fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                 fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto()));
+                fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto());
 
         fireReport.setReporterId(userDTO.getId());
         fireReportService.saveFireReport(fireReport);
@@ -70,11 +70,11 @@ public class FireReportController {
         FireReport fireReport = new FireReport(fireReportDTO.getReporterId(),
                 fireReportDTO.getX(), fireReportDTO.getY(),
                 fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
-                fireReportDTO.getFireTeam(), fireReportDTO.getIsFire(),
+                fireReportDTO.getFireTeam(), fireReportDTO.getIsActiveFire(),
                 fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                 fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                 fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                fireReportDTO.getIsHazardousMaterial());
+                fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto());
 
         UnregisteredUser unregisteredUser = new UnregisteredUser(unregisteredUserDTO.getName(),
                 unregisteredUserDTO.getSurname(), unregisteredUserDTO.getCellPhoneNumber());
