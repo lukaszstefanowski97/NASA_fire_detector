@@ -49,11 +49,11 @@ public class FireReportServiceImpl implements FireReportService {
             fireReportRepository.save(new FireReport(fireReportDTO.getReporterId(),
                     fireReportDTO.getX(), fireReportDTO.getY(),
                     fireReportDTO.getStartDate(), fireReportDTO.getFireReportApproveCounter(),
-                    fireReportDTO.getFireTeam(), fireReportDTO.getIsFire(),
+                    fireReportDTO.getFireTeam(), fireReportDTO.getIsActiveFire(),
                     fireReportDTO.getDescription(), fireReportDTO.getFireDepartamentDescription(),
                     fireReportDTO.getArePeople(), fireReportDTO.getIsWood(),
                     fireReportDTO.getIsBuilding(), fireReportDTO.getIsElectricity(),
-                    fireReportDTO.getIsHazardousMaterial()));
+                    fireReportDTO.getIsHazardousMaterial(), fireReportDTO.getPhoto()));
 
             return fireReportDTO;
         }
@@ -63,8 +63,7 @@ public class FireReportServiceImpl implements FireReportService {
 
     @Override
     public FireReport saveFireReport(FireReport fireReport) {
-        fireReportRepository.save(fireReport);
-        return fireReport;
+        return fireReportRepository.save(fireReport);
     }
 
     @Override
