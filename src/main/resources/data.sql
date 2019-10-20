@@ -5,8 +5,10 @@ INSERT INTO unregistered_user(id ,NAME, SURNAME) VALUES (1,'Jan','Nowak');
 INSERT INTO unregistered_user(id ,NAME, SURNAME) VALUES (2,'Anna','Kowalska');
 
 INSERT INTO fire_report(id,address,are_people,description,fire_departament_description,fire_report_approve_counter,fire_team,is_active_fire,is_building,is_electricity,is_hazardous_material,is_real,is_wood,photo,start_date,reporter_Id,x,y)
-                VALUES (1,'Szczecin, Potulicka 12/23', true,'kosz na moim podworku',null,1,false,true,false,false,false,null,false,null,CURRENT_TIMESTAMP ,1,53.575190, 14.546289);
+                VALUES (1,'Szczecin, Brama Portowa', true,'Trash bin in front of big house',null,5,false,true,false,false,false,null,false,null,CURRENT_TIMESTAMP ,1,53.575190, 14.546289);
 INSERT INTO fire_report(id,address,are_people,description,fire_departament_description,fire_report_approve_counter,fire_team,is_active_fire,is_building,is_electricity,is_hazardous_material,is_real,is_wood,photo,start_date,reporter_Id,x,y)
-                VALUES (2,'Wrocław, Kolorowa 35A',false,'Mały słomiany domek',null,4,false,true,true,true,false,false,true,null,CURRENT_TIMESTAMP,2, 51.575190, 11.546289);
+                VALUES (2,null,false,'Small straw house',null,10,false,true,true,true,false,false,true,null,CURRENT_TIMESTAMP,2, 52.575190, 10.546289);
 INSERT INTO fire_report(id,address,are_people,description,fire_departament_description,fire_report_approve_counter,fire_team,is_active_fire,is_building,is_electricity,is_hazardous_material,is_real,is_wood,photo,start_date,unregistered_reporter_Id,x,y)
-                VALUES (3,'Kraków, Zielona 13F',true,'Wielki dom','Nieduży pożar domu.',4,true,true,true,true,false,true,true,null,CURRENT_TIMESTAMP,2, 51.575190, 11.546289);
+                VALUES (3,'Kraków, Zielona 13F',true,'Villa','Huge fire',1,true,true,true,true,false,true,true,null,CURRENT_TIMESTAMP,2, 50.0198786,19.9481919);
+INSERT INTO fire_report(id,address,are_people,description,fire_departament_description,fire_report_approve_counter,fire_team,is_active_fire,is_building,is_electricity,is_hazardous_material,is_real,is_wood,photo,start_date,unregistered_reporter_Id,x,y)
+                VALUES (4,'Berlin, Brandenburger Tor',true,'Trees',null,3,true,true,true,false,false,true,true,null,CURRENT_TIMESTAMP,1, 52.5162746,13.3755154);
