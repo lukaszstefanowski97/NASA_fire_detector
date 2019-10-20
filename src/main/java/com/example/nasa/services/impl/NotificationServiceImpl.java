@@ -47,7 +47,7 @@ public class NotificationServiceImpl implements NotificationService {
 
         HttpEntity<String> request = new HttpEntity<String>("", headers);
 
-        var response = restTemplate.postForObject(urlPost, request, Object.class);
+        Object response = restTemplate.postForObject(urlPost, request, Object.class);
 
     }
 
