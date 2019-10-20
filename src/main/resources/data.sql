@@ -1,0 +1,2 @@
+INSERT INTO user(id,name,surname,password,cell_phone_number,email,notification_range_in_meters,x,y) VALUES ('1','Tom','Kowalski','tomKowalski1','+48605673426','tomKowalski@gmail.com','30000','53.421132','14.537240');
+INSERT INTO user(id,name,surname,password,cell_phone_number,email,notification_range_in_meters,x,y) VALUES ('2','Anna','Nowak','tomKowalski1','+48664679982','annaNowak@gmail.com','10000','53.421132','14.537240');
