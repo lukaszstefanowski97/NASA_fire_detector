@@ -4,6 +4,6 @@ ADD . .
 RUN mvn clean package
 
 FROM openjdk:8
-COPY --from=builder target/ICFire.jar ICFire.jar
+COPY --from=builder /build/target/ICFire.jar ICFire.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "ICFire.jar"]
