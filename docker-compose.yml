@@ -1,0 +1,14 @@
+version: '3'
+services:
+  spring:
+    build: .
+    container_name: spaceapps19_spring
+    ports:
+    - 48322:8080
+    restart: always
+  node:
+    build: ./nasa_data_obtainer
+    container_name: spaceapps19_node
+    ports:
+    - 28574:80
+    restart: always
