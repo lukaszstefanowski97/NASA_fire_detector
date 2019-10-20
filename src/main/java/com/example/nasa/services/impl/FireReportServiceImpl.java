@@ -82,4 +82,16 @@ public class FireReportServiceImpl implements FireReportService {
 
         return null;
     }
+
+    @Override
+    public FireReport incrementFireReportApproveCounter(Long id) {
+        Optional<FireReport> optionalFireReport = fireReportRepository.findById(id);
+
+        if(optionalFireReport.isPresent()){
+            FireReport fireReport = optionalFireReport.get();
+            fireReport.setFireReportApproveCounter(fireReport.getFireReportApproveCounter()+1);
+            return fireReportRepository.save(fireReport);
+        }
+        return null;
+    }
 }

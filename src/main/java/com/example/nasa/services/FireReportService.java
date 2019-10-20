@@ -18,4 +18,6 @@ public interface FireReportService {
     FireReport saveFireReport(FireReport fireReport);
 
     FireReport changeFireReportStatus(Long id, Boolean status);
+
+    FireReport incrementFireReportApproveCounter(Long id);
 }

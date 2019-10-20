@@ -121,4 +121,10 @@ public class FireReportController {
         return editedFireReport != null ? new ResponseEntity<>(editedFireReport, HttpStatus.OK) :
                 ResponseEntity.notFound().build();
     }
+
+    @PutMapping("/incrementApproveCounter/{id}")
+    public ResponseEntity<FireReport> incrementFireReportApproveCounter(@PathVariable Long id){
+        FireReport fr = fireReportService.incrementFireReportApproveCounter(id);
+        return (fr != null) ? ResponseEntity.ok(fr): ResponseEntity.notFound().build();
+    }
 }
