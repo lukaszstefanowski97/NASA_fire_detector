@@ -3,6 +3,9 @@ const app = express();
 const request = require('request');
 const fs = require('file-system');
 const csv = require('csvtojson');
+const cors = require('cors');
+
+app.use(cors());
 
 setInterval(function () {
     request({
