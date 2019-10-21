@@ -20,4 +20,7 @@
 Logo created by <a href="https://www.linkedin.com/in/alanrej/">Alan Rej</a>
 
 <h4><a href="https://github.com/Bjornskjald/NASA-fire-frontend">Frontend part</a></h4>
+<h4>Other resources:</h4>
+<h4><a href="https://www.smsapi.com/en">50 free sms notifications</a></h4>
+<h4><a href="https://firms.modaps.eosdis.nasa.gov/">Satellite data about fire events</a></h4>
 
