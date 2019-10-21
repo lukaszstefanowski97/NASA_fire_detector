@@ -17,10 +17,11 @@
 
 <h4>This repository contains backend part of ICFire project.</h4>
 
-Logo created by <a href="https://www.linkedin.com/in/alanrej/">Alan Rej</a>
-
-<h4><a href="https://github.com/Bjornskjald/NASA-fire-frontend">Frontend part</a></h4>
+<h3><a href="https://github.com/Bjornskjald/NASA-fire-frontend">Frontend part</a></h3>
 
 <h4>Other resources:</h4>
 <h4><a href="https://www.smsapi.com/en">SMS API</a></h4>
 <h4><a href="https://firms.modaps.eosdis.nasa.gov/">NASA FIRMS</a></h4>
+
+Logo created by <a href="https://www.linkedin.com/in/alanrej/">Alan Rej</a>
+
