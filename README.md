@@ -15,7 +15,7 @@
   </tr>
 </table>
 
-<h4>This repository contains backend part of ICFire project.</h4>
+<h4>This repository contains backend part of <a href="https://2019.spaceappschallenge.org/challenges/living-our-world/spot-fire-v20/teams/icfire/project">ICFire</a> project.</h4>
 
 <h3><a href="https://github.com/Bjornskjald/NASA-fire-frontend">Frontend part</a></h3>
 
